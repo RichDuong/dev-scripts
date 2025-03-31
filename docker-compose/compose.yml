@@ -8,8 +8,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
       - TITLE=webtop
-      - PASSWORD=${WEBTOPGUIPW} #Change this Password
-    hostname: webtop-phobos-rqd
+      - PASSWORD=${WEBTOPGUIPW} #Check .env file for password variable
+    hostname: ${HOSTNAME}
     volumes:
       - /myDockerVolume/config:/config
       - /var/run/docker.sock:/var/run/docker.sock #optional
