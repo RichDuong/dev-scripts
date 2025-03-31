@@ -1,16 +1,19 @@
 services:
   webtop:
     image: lscr.io/linuxserver/webtop:ubuntu-xfce
-    container_name: webtop
+#    user: 1001:1001
+    container_name: webtop-rqd
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
       - TITLE=webtop
-      - PASSWORD=admin1234 #Change this Password
-    hostname: webtop-phobos
+      - PASSWORD=${WEBTOPGUIPW} #Change this Password
+    hostname: webtop-phobos-rqd
     volumes:
       - /myDockerVolume/config:/config
       - /var/run/docker.sock:/var/run/docker.sock #optional
     ports:
-      - 3001:3001
+      - 3002:3001
+    env_file: webtop.env
+
