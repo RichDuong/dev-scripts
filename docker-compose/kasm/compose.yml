@@ -1,0 +1,19 @@
+services:
+  webtop:
+    image: kasmweb/ubuntu-noble-desktop:1.16.1-rolling-daily
+#    user: 1001:1001
+    container_name: kasm-ubuntu-noble
+    environment:
+#      - PUID=1000
+#      - PGID=1000
+      - TZ=America/Chicago
+      - TITLE=kasm-ubuntu-noble
+      - VNC_PW=test1234 #Change this Password | User=kasm_user
+    hostname: kasmDesktop
+    volumes:
+      - ./config:/config
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 6901:6901
+#    env_file: webtop.env
+
