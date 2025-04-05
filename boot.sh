@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Hello World"
-echo "Add something here"
+echo "Add something here."
